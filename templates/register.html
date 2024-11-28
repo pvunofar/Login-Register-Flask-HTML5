@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Signup</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='secondstyles.css') }}" />
+  </head>
+  <style>
+    /* Flash messages */
+    .flash.error {
+    background-color: #f8d7da;
+    color: #721c24;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1.2rem;
+    border: 1px solid #f5c6cb;
+  }
+
+  .flash.success {
+    background-color: #d4edda;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1.2rem;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+  }
+  </style>
+  <body>
+    <div class="register-container">
+      <div class="register-title">
+        <div class="register-text">Signup</div>
+      </div>
+
+      <!-- Hiển thị thông báo flash -->
+      {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+          <div class="flash-messages">
+            {% for category, message in messages %}
+              <div class="flash {{ category }}">
+                {{ message }}
+              </div>
+            {% endfor %}
+          </div>
+        {% endif %}
+      {% endwith %}
+
+      <div class="register-form">
+        <form method="POST" onsubmit="return signupFunction(event)">
+          <div class="register-label">Username</div>
+          <div class="register-input">
+            <input type="text" name="username" required />
+          </div>
+
+          <div class="register-label">Password</div>
+          <div class="register-input">
+            <input type="password" name="password" id="psc" required />
+          </div>
+
+          <div class="register-label">Confirm Password</div>
+          <div class="register-input">
+            <input type="password" name="confirm_password" id="pscc" required />
+          </div>
+
+          <div class="register-submit">
+            <button type="submit" class="register-btn">
+              Sign up
+            </button>
+          </div>
+        </form>
+
+        <div class="register-dont-have-account">
+          <div class="register-message">You have an account?</div>
+          <a href="/login">Login here</a> <!-- Liên kết tới trang đăng nhập -->
+        </div>
+      </div>
+    </div>
+
+    <script>
+      function signupFunction(event) {
+        var userpass = document.getElementById('psc').value;
+        var passcheck = document.getElementById('pscc').value;
+
+        if (userpass !== passcheck) {
+          alert('Passwords do not match!');
+          event.preventDefault(); // Prevent form submission if passwords do not match
+          return false;  // Prevent form submission
+        }
+
+        return true;  // Allow form submission if passwords match
+      }
+    </script>
+  </body>
+</html>

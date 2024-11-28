@@ -1,0 +1,111 @@
+* {
+    box-sizing: border-box;
+    padding: 0px;
+    margin: 0px;
+    font-size: 13px;
+  }
+  :root {
+    --bg-c-: #ffffff;
+    --f-c-: #222222;
+    --f-c-s: #979797;
+  }
+  body {
+    background-color: rgb(2, 0, 36);
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .login-container {
+    width: 600px;
+    height: 80vh;
+    background-color: var(--bg-c-);
+    border-radius: 20px;
+  }
+  .login-container .login-title{
+    display: flex;
+    justify-content: center;
+  }
+  .login-container .login-text{
+    font-size: 2rem;
+    font-family: Arial, Helvetica, sans-serif;
+    color: var(--f-c-);
+    margin-top: 2rem;
+    font-weight: 600;
+  }
+  
+  .login-label{
+    font-size: 1.5rem;
+    font-family: Arial, Helvetica, sans-serif;
+    color: var(--f-c-);
+    margin-bottom: 1rem;
+    text-align: center;
+  }
+  .login-input{
+    display: flex;
+    justify-content: center;
+  }
+  
+  .login-input input{
+    width: 80%;
+    font-size: 1.5rem;
+    padding: 1.2rem;
+    border-radius: 7px;
+    color: var(--f-c-s);
+  }
+  
+  .login-submit{
+    display: flex;
+    justify-content: center;
+  
+  }
+  
+  .login-container .login-btn{
+    width: 80%;
+    font-size: 1.5rem;
+    padding: 1.2rem;
+    border-radius: 7px;
+    background-color: #020024;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    border: none;
+    color: #ffffff;
+    cursor: pointer;  
+  }
+  
+  .login-dont-have-account{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .login-message{
+    margin-top: 10px;
+    font-size: 1.5rem;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+  .login-dont-have-account a{
+    margin-top: 10px;
+    font-size: 1.5rem;
+    font-family: Arial, Helvetica, sans-serif;
+    margin-left: 10px;
+  }
+  .login-dont-have-account a:active{
+    color: #555555;
+  }
+  
+  .flash.error {
+    background-color: #f8d7da;
+    color: #721c24;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1.2rem;
+    border: 1px solid #f5c6cb;
+  }
+
+  .flash.success {
+    background-color: #d4edda;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1.2rem;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+  }
+

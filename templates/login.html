@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Home</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}" />
+  </head>
+  <body>
+    <div class="login-container">
+      <div class="login-title">
+        <div class="login-text">Sign in</div>
+      </div>
+      
+      <!-- Hiển thị thông báo flash -->
+      {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+          <div class="flash-messages">
+            {% for category, message in messages %}
+              <div class="flash {{ category }}">
+                {{ message }}
+              </div>
+            {% endfor %}
+          </div>
+        {% endif %}
+      {% endwith %}
+      
+      <div style="margin-bottom: 30px"></div>
+      <div class="login-form">
+        <form method="POST">
+          <div class="login-label">Username</div>
+          <div class="login-input">
+            <input type="text" name="username" required />
+          </div>
+          <div style="margin-bottom: 20px"></div>
+          <div class="login-label">Password</div>
+          <div class="login-input">
+            <input type="password" name="password" required />
+          </div>
+          <div style="margin-bottom: 40px"></div>
+          <div class="login-submit">
+            <button type="submit" class="login-btn">Log In</button>
+          </div>
+        </form>
+        <div style="margin-bottom: 20px"></div>
+        <div class="login-dont-have-account">
+          <div class="login-message">Don't have an account?</div>
+          <a href="/register">Sign up here</a>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

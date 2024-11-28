@@ -1,0 +1,66 @@
+* {
+    box-sizing: border-box;
+    padding: 0px;
+    margin: 0px;
+    font-size: 13px;
+  }
+  :root {
+    --bg-c-: #ffffff;
+    --f-c-: #222222;
+    --f-c-s: #979797;
+  }
+  body {
+    background-color: rgb(2, 0, 36);
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .dash-container {
+    background-color: var(--bg-c-);
+    width: 60%;
+    height: 300px;
+    border-radius: 20px;
+  }
+  
+  .dash-display-username {
+    display: flex;
+    justify-content: center;
+  }
+  .dash-display-username h2 {
+    font-size: 2rem;
+    font-family: Arial, Helvetica, sans-serif;
+    color: var(--f-c-);
+    margin-top: 20px;
+  }
+  .dash-around-center {
+    display: flex;
+    justify-content: center;
+  }
+  .dash-role {
+    font-size: 1.5rem;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+  .dash-btn-logout {
+    font-size: 1.3rem;
+    background-color: rgb(2, 0, 36);
+    color: var(--bg-c-);
+    padding: 0.7rem;
+    border-radius:7px;
+    cursor: pointer;
+    margin-top: 20px;
+    margin-left: 20px;
+  }
+  .dash-image{
+    display: flex;
+    justify-content: center;
+  }
+  .dash-image img{
+    height: 150px;
+  }
+
+  .dash-display-username span{
+    font-size: 2rem;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #155724;
+  }
